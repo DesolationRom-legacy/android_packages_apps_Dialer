@@ -812,4 +812,11 @@
 
     <string name="call_log_show_all_slots">All SIMs</string>
     <string name="call_log_all_calls_header">All calls</string>
+    
+    <!-- Label for the phone account settings [CHAR LIMIT=30] -->
+    <string name="phone_account_settings_label">Calling accounts</string>
+
+    <!-- Forward lookup -->
+    <string name="nearby_places">Nearby places</string>
+    <string name="people">People</string>
 </resources>
