@@ -117,4 +117,13 @@
     <color name="exposed_recents_list_footer_bg">#ffffffff</color>
     <color name="exposed_dialpad_fragment">#00000000</color>
 
+    <!-- Text color for no favorites message -->
+    <color name="nofavorite_text_color">#777777</color>
+
+    <!-- Colors for incoming and outgoing calls in the call statistics -->
+    <color name="call_stats_incoming">#33b5e5</color>
+    <color name="call_stats_outgoing">#99cc00</color>
+    <color name="call_stats_missed">#eb1313</color>
+    <color name="call_stats_bar_background">#88888888</color>
+
 </resources>

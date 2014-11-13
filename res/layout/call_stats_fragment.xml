@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2011 The Android Open Source Project
+<!--
+     Copyright (C) 2011 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,69 +20,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?android:attr/actionBarSize"
-    android:orientation="vertical"
     android:divider="?android:attr/dividerHorizontal"
-    android:showDividers="end"
-    android:background="@color/background_dialer_list_items">
+    android:orientation="vertical"
+    android:showDividers="end" >
 
-    <FrameLayout
-        android:id="@+id/voicemail_status"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/call_stats_header"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone">
-        <include layout="@layout/call_log_voicemail_status"
-    />
-    </FrameLayout>
+        android:orientation="vertical"
+        android:paddingTop="@dimen/call_log_inner_margin"
+        android:visibility="gone" >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/filter_status"
+            android:id="@+id/date_filter"
+            style="@style/ContactListSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ContactListSeparatorTextViewStyle"
             android:layout_marginStart="@dimen/call_log_outer_margin"
             android:layout_marginEnd="@dimen/call_log_outer_margin"
-            android:paddingTop="@dimen/call_log_inner_margin"
-            android:paddingBottom="@dimen/call_log_inner_margin"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:visibility="gone"
-            />
+            android:background="@null" />
+
+        <TextView
+            android:id="@+id/sum_header"
+            style="@style/ContactListSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/call_log_outer_margin"
+            android:layout_marginEnd="@dimen/call_log_outer_margin"
+            android:paddingBottom="@dimen/call_log_inner_margin" />
+
         <View
-            android:id="@+id/call_log_divider"
+            android:id="@+id/call_stats_divider"
             android:layout_width="match_parent"
             android:layout_height="1px"
+            android:layout_gravity="bottom"
             android:layout_marginStart="@dimen/call_log_outer_margin"
             android:layout_marginEnd="@dimen/call_log_outer_margin"
-            android:layout_gravity="bottom"
-            android:background="#55ffffff"
-            />
-    </FrameLayout>
+            android:background="#55ffffff" />
+    </LinearLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!-- clipChildren=false is required to ensure shadows drawn
-            within list items aren't clipped by the list item bounds. -->
-        <ListView android:id="@android:id/list"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fadingEdge="none"
-            android:scrollbarStyle="outsideOverlay"
-            android:background="@color/background_dialer_list_items"
             android:divider="@null"
-            android:nestedScrollingEnabled="true"
-            android:clipChildren="false"
-        />
+            android:fadingEdge="none"
+            android:scrollbarStyle="outsideOverlay" />
 
-        <include
-            android:id="@+id/empty_list_view"
+        <TextView
+            android:id="@android:id/empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            layout="@layout/empty_list_view"
-            android:visibility="gone"/>
-
+            android:layout_marginTop="@dimen/empty_message_top_margin"
+            android:gravity="center"
+            android:text="@string/recentCalls_empty"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="?android:attr/textColorSecondary" />
     </FrameLayout>
 
 </LinearLayout>
