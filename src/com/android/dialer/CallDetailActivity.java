@@ -149,7 +149,7 @@ public class CallDetailActivity extends AnalyticsActivity implements ProximitySe
     private final ProximitySensorListener mProximitySensorListener = new ProximitySensorListener();
 
     private CallRecordingDataStore mCallRecordingDataStore = new CallRecordingDataStore();
-    private CallRecordingPlayer mCallRecordingPlayer = new CallRecordingPlayer();
+    private CallRecordingPlayer mCallRecordingPlayer;
 
     /** Listener to changes in the proximity sensor state. */
     private class ProximitySensorListener implements ProximitySensorManager.Listener {
@@ -237,6 +237,8 @@ public class CallDetailActivity extends AnalyticsActivity implements ProximitySe
         super.onCreate(icicle);
 
         setContentView(R.layout.call_detail);
+
+        mCallRecordingPlayer = new CallRecordingPlayer(this);
 
         mAsyncTaskExecutor = AsyncTaskExecutors.createThreadPoolExecutor();
         mInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
