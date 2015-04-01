@@ -540,9 +540,6 @@ public class DialpadFragment extends Fragment
                 }
 
             }
-        } else {
-            mAddParticipant = intent.getBooleanExtra(ADD_PARTICIPANT_KEY, false);
-            ((HostInterface) getActivity()).setConferenceDialButtonVisibility(true);
         }
         showDialpadChooser(needToShowDialpadChooser);
         setStartedFromNewIntent(false);
